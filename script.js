@@ -42,7 +42,9 @@ generate.addEventListener('click', () => {
 
 	
 	result.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+	
 });
+
 
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
