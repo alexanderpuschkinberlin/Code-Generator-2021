@@ -1,21 +1,4 @@
-// // Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// //generateBtn.addEventListener("click", writePassword);
-
-
-
-////////
 
 const result = document.getElementById('password');
 
@@ -27,17 +10,34 @@ const randomFunc = {
 }
 
 
-generate.addEventListener('click', () => {
-	// const length = +lengthEl.value;
-	const length = prompt("Enter the password length")
-	//const hasLower = lowercaseEl.checked;
-	hasLower = prompt("Include lower case letters?")
-	//const hasUpper = uppercaseEl.checked;
-	hasUpper = prompt("Include upper case letters?")
-	//const hasNumber = numbersEl.checked;
-	hasNumber = prompt("Include numbers?")
-	//const hasSymbol = symbolsEl.checked;
-	hasSymbol = prompt("Include symbols?")
+generate.addEventListener('click', function () {
+	
+	let length = prompt("Enter the password length")
+		if (Number.isNaN(length)) {
+			length = prompt("Please enter a number (8-128 charakters long)");
+		}
+		if (length < 8) {
+			length = prompt("Please enter a number above 8");
+		}
+		if (length > 128) {
+			length = prompt("Please enter a number below 128");
+		}
+
+
+	
+	hasLower = confirm("Include lower case letters?")
+	
+	hasUpper = confirm("Include upper case letters?")
+	
+	hasNumber = confirm("Include numbers?")
+	
+	hasSymbol = confirm("Include symbols?")
+
+	if (hasLower === false && hasUpper === false && hasNumber === false && hasSymbol === false ) {
+
+		alert ("you have not selected at least on of the options. Please restart.");
+		
+	}
 
 
 	
