@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* setting the basic design */
 html,
 body,
 .wrapper {
@@ -72,6 +73,7 @@ header {
   clear: both;
 }
 
+/* style of the button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -96,7 +98,7 @@ button[disabled] {
 .float-right {
   float: right;
 }
-
+/* the style of the box where it will be printed */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +120,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* making the page responsive */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

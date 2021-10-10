@@ -1,7 +1,8 @@
 
-
+// get DOM element to be used within js
 const result = document.getElementById('password');
 
+//define variables
 const randomFunc = {
 	lower: getRandomLower,
 	upper: getRandomUpper,
@@ -9,6 +10,7 @@ const randomFunc = {
 	symbol: getRandomSymbol
 }
 
+// Promt section with validation included
 
 generate.addEventListener('click', function () {
 	
@@ -22,8 +24,6 @@ generate.addEventListener('click', function () {
 		if (length > 128) {
 			length = prompt("Please enter a number below 128");
 		}
-
-
 	
 	hasLower = confirm("Include lower case letters?")
 	
@@ -35,17 +35,15 @@ generate.addEventListener('click', function () {
 
 	if (hasLower === false && hasUpper === false && hasNumber === false && hasSymbol === false ) {
 
-		alert ("you have not selected at least on of the options. Please restart.");
+		alert ("you have not selected at least one of the options. Please restart.");
 		
 	}
 
-
-	
 	result.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 	
 });
 
-
+// assemble the final password from the created random characters
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
 	const typesCount = lower + upper + number + symbol;
@@ -69,6 +67,7 @@ function generatePassword(lower, upper, number, symbol, length) {
 	return finalPassword;
 }
 
+// Create a random character for each type
 function getRandomLower() {
 	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
