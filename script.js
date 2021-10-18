@@ -15,7 +15,7 @@ const randomFunc = {
 generate.addEventListener('click', function () {
 	
 	let length = prompt("Enter the password length")
-		if (Number.isNaN(length)) {
+		if (parseInt(length,10)) {
 			length = prompt("Please enter a number (8-128 charakters long)");
 		}
 		if (length < 8) {
@@ -24,6 +24,14 @@ generate.addEventListener('click', function () {
 		if (length > 128) {
 			length = prompt("Please enter a number below 128");
 		}
+
+		if (isNaN(length)) {
+		
+			alert("You have not entered a number. Please restart!")
+			return;
+		}
+
+	
 	
 	hasLower = confirm("Include lower case letters?")
 	
